@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  webgl:
+    container_name: unity-webgl
+    image: unity-webgl
+    build: ./docker/nginx
+    volumes:
+      - ./build:/var/www
+    ports:
+      - "8080:80"
+  api-mock:
+    image: mockserver/mockserver
+    user: root
+    ports:
+      - "1080:1080"
+    command: -serverPort 1080
+    environment:
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /api-mock/expectations_init.json
+      MOCKSERVER_WATCH_INITIALIZATION_JSON: 'true'
+      MOCKSERVER_PROPERTY_FILE: /api-mock/mockserver.properties
+    volumes:
+      - ./docker/api-mock:/api-mock
