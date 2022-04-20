@@ -1,14 +1,6 @@
 version: '3.8'
 
 services:
-  webgl:
-    container_name: unity-webgl
-    image: unity-webgl
-    build: ./docker/nginx
-    volumes:
-      - ./build:/var/www
-    ports:
-      - "8080:80"
   api-mock:
     image: mockserver/mockserver
     user: root

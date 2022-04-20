@@ -6,19 +6,14 @@
       "headers": {
         "Host": [
           "localhost:1080"
-        ],
-        "Content-Encoding": ["gzip"],
-        "Accept-Encoding" : [ "gzip,deflate" ]
+        ]
       }
     },
     "httpResponse": {
-      "headers": {
-        "Content-Encoding": ["gzip"],
-        "Accept-Encoding" : [ "gzip,deflate" ]
-      },
       "statusCode": 200,
       "body": {
-        "success": true
+        "success": false,
+        "message": "Message received"
       }
     }
   }
